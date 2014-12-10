@@ -1,0 +1,23 @@
+{
+  "configuration" : {
+    "apiKey" : "XXXApiKeyXXX",
+    "apiSecret" : "XXXApiSecretXXX",
+    "accessToken" : "XXXAccessTokenXXX",
+    "accessSecret" : "XXXAccessTokenSecretXXX",
+    "dateformat" : "md"
+  },
+  "statuses" : {
+    "0401" : ["Yes"],
+    "0401" : ["-. ---"],
+    "0504" : ["Nooooooooooooooooooooooooo…"],
+    "0921" : ["No – But today is the International Day of Peace", "img/international_peace_day_logo.jpg"],
+    "default" : [
+      ["No"],
+      ["Nope"],
+      ["Nah"],
+      ["Nay"],
+      ["Not yet"],
+      ["Of course not"]
+    ]
+  }
+}
