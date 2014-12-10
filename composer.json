@@ -1,0 +1,8 @@
+{
+    "name": "pixelbrackets/has_yet",
+    "description": "Has something happend yet?",
+    "license": "GPL-2.0",
+    "require": {
+        "jublonet/codebird-php": "2.6.0"
+    }
+}
