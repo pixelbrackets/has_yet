@@ -15,7 +15,26 @@ Example account using this repository:
 Installation
 ------------
 
-	composer require pixelbrackets/has_yet [version]
+**Set up the script**
+
+1. Use composer to install the script and all dependencies
+  - »composer create-project pixelbrackets/has_yet« or pick your favourite release version »composer create-project pixelbrackets/has_yet has_yet 0.1.0«
+1. Copy the configuration example file and rename it to »configuration.json«
+1. Protect the whole folder from public access (eg. with a htaccess file)!
+1. Set up a cronjob which points to the »cron.php« file
+  - Please Note: Twitter has a mechanism to detect duplicate tweets (https://twittercommunity.com/t/duplicate-tweets/13264). Consider this if you want to frequently post the same status message. It appears that a 24 hour time range is sufficient.
+
+**Set up a twitter account**
+
+1. Register a twitter account (that was obvious, wasn't it?)
+1. Register an app for this account
+  - The advantage of this move is that you won't need to set up an OAuth Login, since Twitter offers to generate an Access Token for the own account
+1. Go to https://apps.twitter.com/ to create/register the Twitter App
+1. Click “Create New App” Button
+1. Create an application (Name, Description, Website etc.)
+1. Change “Permissions” to “Read & Write”
+1. Generate an Access Token on the “Keys and Access Tokens” tab
+1. Copy API Key, API Secret, Access Token, Access Token Secret into the configuration file
 
 Source
 ------
