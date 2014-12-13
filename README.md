@@ -20,7 +20,9 @@ Installation
 1. Use composer to install the script and all dependencies
   - »composer create-project pixelbrackets/has_yet« or pick your favourite release version »composer create-project pixelbrackets/has_yet has_yet 0.1.0«
 1. Copy the configuration example file and rename it to »configuration.json«
-  - The example should be self-explaining, you may define custom messages for special days and/or one or more default messages
+  - The example configuration should be self-explaining, you may define custom messages for special days and/or one or more default messages
+  - A status message may consist of a text and an image
+  - The optional image may be a local filename or a URL (http/https supported)
 1. Protect the whole folder from public access (eg. with a htaccess file)!
 1. Set up a cronjob which points to the »cron.php« file
   - Please Note: Twitter has a mechanism to detect duplicate tweets (https://twittercommunity.com/t/duplicate-tweets/13264). Consider this if you want to frequently post the same status message. It appears that a 24 hour time range is sufficient.
