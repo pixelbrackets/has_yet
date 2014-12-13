@@ -3,8 +3,11 @@
 // load codebird
 require __DIR__ . '/vendor/autoload.php';
 
-// read configuration file
-$configurationJSON = file_get_contents(__DIR__ . '/configuration.json');
+// read configuration file -filename may be passed as argument
+// (»php /path/to/cron.php johndoe« reads »/johndoe.json«) or
+// falls back to »/configuration.json«
+$file = (!empty($argv[1]))? $argv[1] : 'configuration';
+$configurationJSON = file_get_contents(__DIR__ . '/' . $file . '.json');
 if ($configurationJSON == FALSE) {
 	echo 'Error: Can not read the configuration file' . PHP_EOL;
 }
