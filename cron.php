@@ -10,6 +10,7 @@ $file = (!empty($argv[1]))? $argv[1] : 'configuration';
 $configurationJSON = file_get_contents(__DIR__ . '/' . $file . '.json');
 if ($configurationJSON == FALSE) {
 	echo 'Error: Can not read the configuration file' . PHP_EOL;
+	die();
 }
 $configuration = json_decode($configurationJSON, true);
 
