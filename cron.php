@@ -26,11 +26,15 @@ if (!empty($configuration['statuses'][$dateKey])) {
 	// special message exists
 	$status = $configuration['statuses'][$dateKey];
 }
-else {
+elseif (!empty($configuration['statuses']['default'])) {
 	// fallback
 	// pick random default status
 	shuffle($configuration['statuses']['default']);
 	$status = $configuration['statuses']['default'][0];
+}
+else {
+	echo 'Error: No valid status message found' . PHP_EOL;
+	die();
 }
 
 // upload media files
