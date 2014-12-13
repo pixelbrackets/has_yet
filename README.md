@@ -23,7 +23,7 @@ Installation
   - The example configuration should be self-explaining, you may define custom messages for special days and/or one or more default messages
   - A status message may consist of a text and an image
   - The optional image may be a local filename or a URL (http/https supported)
-1. Protect the whole folder from public access (eg. with a htaccess file)!
+1. Protect the whole folder from public access (eg. with a htaccess file or place it outside of the document root)!
 1. Set up a cronjob which points to the »cron.php« file
   - Please Note: Twitter has a mechanism to detect duplicate tweets (https://twittercommunity.com/t/duplicate-tweets/13264). Consider this if you want to frequently post the same status message. It appears that a 24 hour time range is sufficient.
 1. If you want to set up multiple accounts or use varying messages, then rename the configuration file (eg. »johndoe.json«) and pass the filename as argument (»php /path/to/cron.php johndoe«)

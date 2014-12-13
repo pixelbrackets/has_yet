@@ -1,0 +1,2 @@
+### deny direct access to all files und subfolders
+deny from all
