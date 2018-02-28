@@ -1,7 +1,7 @@
 {
     "name": "pixelbrackets/has_yet",
     "description": "Has … yet? Script to set up a Twitter bot tweeting answers to important questions like “Has something happend yet?”",
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "require": {
         "jublonet/codebird-php": "2.6.0"
     }
