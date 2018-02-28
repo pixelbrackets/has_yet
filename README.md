@@ -93,5 +93,3 @@ Contribution
 ------------
 
 This script is Open Source, so please use, patch, extend or fork it.
-
-[![Flattr](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/thing/3713801)
