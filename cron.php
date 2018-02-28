@@ -8,9 +8,9 @@ require __DIR__ . '/vendor/autoload.php';
 // falls back to »/configuration.json«
 $file = (!empty($argv[1]))? $argv[1] : 'configuration';
 $configurationJSON = file_get_contents(__DIR__ . '/' . $file . '.json');
-if ($configurationJSON == FALSE) {
-	echo 'Error: Can not read the configuration file' . PHP_EOL;
-	die();
+if ($configurationJSON === false) {
+    echo 'Error: Can not read the configuration file' . PHP_EOL;
+    die();
 }
 $configuration = json_decode($configurationJSON, true);
 
@@ -23,45 +23,40 @@ $cb->setToken($configuration['configuration']['accessToken'], $configuration['co
 $status = '';
 $dateKey = date($configuration['configuration']['dateformat']);
 if (!empty($configuration['statuses'][$dateKey])) {
-	// special message exists
-	$status = $configuration['statuses'][$dateKey];
-}
-elseif (!empty($configuration['statuses']['default'])) {
-	// fallback
-	// pick random default status
-	shuffle($configuration['statuses']['default']);
-	$status = $configuration['statuses']['default'][0];
-}
-else {
-	echo 'Error: No valid status message found' . PHP_EOL;
-	die();
+    // special message exists
+    $status = $configuration['statuses'][$dateKey];
+} elseif (!empty($configuration['statuses']['default'])) {
+    // fallback
+    // pick random default status
+    shuffle($configuration['statuses']['default']);
+    $status = $configuration['statuses']['default'][0];
+} else {
+    echo 'Error: No valid status message found' . PHP_EOL;
+    die();
 }
 
 // upload media files
 $media = '';
 if (!empty($status[1])) {
-	$mediaUpload = $cb->media_upload(array(
-		'media' => $status[1]
-	));
-	$media = $mediaUpload->media_id_string;
+    $mediaUpload = $cb->media_upload(array(
+        'media' => $status[1]
+    ));
+    $media = $mediaUpload->media_id_string;
 }
 
 // send tweet
 $params = array(
-	'status' => $status[0],
+    'status' => $status[0],
 );
 if (!empty($media)) {
-	$params['media_ids'] = $media;
+    $params['media_ids'] = $media;
 }
 $cb->setReturnFormat(CODEBIRD_RETURNFORMAT_ARRAY);
 $statusUpdate = $cb->statuses_update($params);
 
 // show API response
 if (isset($statusUpdate['id_str'])) {
-	echo 'Success: Created tweet https://twitter.com/' . $statusUpdate['user']['screen_name'] . '/status/' . $statusUpdate['id_str'] . PHP_EOL;
+    echo 'Success: Created tweet https://twitter.com/' . $statusUpdate['user']['screen_name'] . '/status/' . $statusUpdate['id_str'] . PHP_EOL;
+} else {
+    echo 'Error: Can not create tweet (' . print_r($statusUpdate['errors'], true) . ')' . PHP_EOL;
 }
-else {
-	echo 'Error: Can not create tweet (' . print_r($statusUpdate['errors'], true) . ')' . PHP_EOL;
-}
-
-?>
