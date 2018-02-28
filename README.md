@@ -65,7 +65,7 @@ Dan Untenzu (<mail@pixelbrackets.de> / [@pixelbrackets](https://github.com/pixel
 Changelog
 ---------
 
-https://github.com/pixelbrackets/has_yet/commits/master
+[./Changelog.md](./Changelog.md)
 
 Contribution
 ------------
