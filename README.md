@@ -84,10 +84,9 @@ Author
 
 Dan Untenzu (<mail@pixelbrackets.de> / [@pixelbrackets](https://github.com/pixelbrackets))
 
-Changelog
----------
+## Changelog
 
-[./Changelog.md](./Changelog.md)
+See [./CHANGELOG.md](CHANGELOG.md)
 
 Contribution
 ------------
